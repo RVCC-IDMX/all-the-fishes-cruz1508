@@ -39,10 +39,6 @@
     await PIXI.Assets.load("img/brownfish.png")
     await PIXI.Assets.load("img/transparentglass.png")
    
-    
-
-  
-
 
     
     //Adding Glass Texture
@@ -58,9 +54,8 @@
         fish1.anchor.set(.5);
         fish1.anchor.x = .8;
         fish1.anchor.y = .5;
-        //fish1.tint = 0xFFF00
         fish1.x = 1000;
-        fish1.y = 300;
+        fish1.y = 350;
 
     //Add Fish 2 (Goldfish)
 
@@ -93,22 +88,18 @@
     grass.scale.set(1.9);
     grass.tint = 0xFFF00
     grass.x = 0;
-    grass.y = 450;
+    grass.y = 380;
 
 
     //Add it to the stage
    
     // app.stage.addChild(fish1); 
     //app.stage.addChild(fish2); 
-    app.stage.addChild(grass)
+    
     app.stage.addChild(fish3)
     app.stage.addChild(fish4)
-    app.stage.addChild(glass)
-    
- 
-    
 
-
+    
 
     //Fish Container
 
@@ -122,6 +113,11 @@
 
         app.stage.addChild(fishContainer);
 
+        app.stage.addChild(grass)
+
+
+    app.stage.addChild(glass)
+
         //Counter
         let counter = 0;
 
@@ -129,6 +125,7 @@
         function loop() {
 
             counter++;
+
 
             //Fish 1 Animation
             fish1.y = (Math.sin(counter/50) * 20) + 800;
@@ -144,14 +141,9 @@
             fish3.angle = (Math.sin(counter/40) * 1);
 
             //Fish 4 Animation
-
-            fish4.y = (Math.sin(counter/90) * 20) + 600;
-            fish4.scale.x = (Math.sin(counter/100)) * -.01 + -.25
-            fish4.angle = (Math.sin(counter/200) * 2);
-
-            
-
-            
+            fish4.y = (Math.sin(counter/90) * 30) + 600;
+            fish4.scale.x = (Math.sin(counter/50)) * -.01 + -.25
+            fish4.angle = (Math.sin(counter/200) * 2);    
 
             requestAnimationFrame(loop);
 
